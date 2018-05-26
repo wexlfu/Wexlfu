@@ -40,7 +40,7 @@
 * Morlan takes over many operations in the Estmarks.
 
 # 553 YW
-* After suffering severe setbacks in the Heart Mountains, Thar-Nella begin applying their research in general animation. They produce a number of golems, but need earth energy for mass production.
+* After suffering severe setbacks in the Heart Mountains, Thar-Nella begins applying their research in general animation. They produce a number of golems, but need earth energy for mass production.
 
 # 556 YW
 * Saurians and trolls on the northern border of the Bitter Swamp make an alliance against Thar-Nella.
@@ -55,6 +55,9 @@
 
 # 570 YW
 * Wesnothian and Elvish exterminators launch an assault upon the Estmarks. Several operations of Thar-Nella are destroyed.
+
+# 572 YW
+* Thar-Nella increase their efforts spreading magical knowledge in small villages, particularly with animation magic.
 
 # 593 YW
 * Ravanal turns to evil.
@@ -71,3 +74,12 @@
 
 # 635 YW
 * Rumors of a dragon in the southern deserts reach Nella. She sends a detachment of troops to bring back a Skeletal Dragon.
+
+# 636 YW
+* Thar-Nella expands into the southern deserts.
+
+# 842 YW
+* SotBE begins.
+
+# 858 YW
+* SotBE ends.

@@ -1,7 +1,7 @@
 #textdomain wesnoth-Wexlfu
 
 #define WXFU
-0.0.1#enddef
+@VERSION@#enddef
 
 # Wesnoth EXtension Library For Utility And Story
 # Also includes sensible extensions to core (e.g. golems).

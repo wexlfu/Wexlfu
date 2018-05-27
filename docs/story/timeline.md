@@ -1,3 +1,6 @@
+# Pre-Wesnoth
+* Ancient Dwarf Kingdom (Bel-Korad) situated in the western Heart Mountains participates in war against southern elves. They are defeated, despite their great automatons.
+
 # 417 YW
 * Garadine Dynasty begins.
 
@@ -39,24 +42,27 @@
 * Nella, realizing her natural life is at an end (though prolonged by her arts), becomes a lich.
 * Morlan takes over many operations in the Estmarks.
 
-# 553 YW
+# 562 YW
+* Dwarvish Miners under Lord Dokabaril discover a remnant of Bel-Korad: the Bright Glass Heart.
+
+# 563 YW
 * After suffering severe setbacks in the Heart Mountains, Thar-Nella begins applying their research in general animation. They produce a number of golems, but need earth energy for mass production.
 
-# 556 YW
+# 566 YW
 * Saurians and trolls on the northern border of the Bitter Swamp make an alliance against Thar-Nella.
 * Thar-Nella is repulsed from their energy-harvesting in the far-eastern hills by the Bitter Alliance.
 * Morlan is slain by saurian assassins.
 * Nella resurrects Morlan as a death knight.
 
-# 558 YW
+# 568 YW
 * Thar-Nella forces destroy troll and saurian presence in the south of the far-eastern hills.
 * Golem manufacturing begins again.
 * Smaller harvesting operations are built in the Heart Mountains with great secrecy.
 
-# 570 YW
+# 580 YW
 * Wesnothian and Elvish exterminators launch an assault upon the Estmarks. Several operations of Thar-Nella are destroyed.
 
-# 572 YW
+# 582 YW
 * Thar-Nella increase their efforts spreading magical knowledge in small villages, particularly with animation magic.
 
 # 593 YW

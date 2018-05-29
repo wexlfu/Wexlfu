@@ -8,3 +8,6 @@ Traditional underground monster, present in many places already.
 
 # Rogue Mage Line - Liberty
 Magi of Thar-Nella who have not wholly thrown themselves into the dark arts (and thus are not aspiring for lichdom).
+
+# Dwarvish Scribe - Core
+Level 1 for runemaster line.

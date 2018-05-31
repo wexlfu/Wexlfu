@@ -3,7 +3,7 @@
 #define WXFU
 @VERSION@#enddef
 
-# Wesnoth EXtension Library For Utility And Story
+# Wesnoth EXtension Library For Utility
 # Also includes extensions to core as appropriate to implement the "Wexlfu" shared history.
 
 # Expected config:

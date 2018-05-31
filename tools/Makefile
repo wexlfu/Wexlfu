@@ -6,7 +6,7 @@ all:
 campaign: _server.pbl
 wexlfu: loader.cfg
 
-_server.pbl: _server.pbl.in secrets/email secrets/passphrase VERSION
+_server.pbl: _server.pbl.in secrets/email.ign secrets/passphrase.ign VERSION
 	cp $< $@
 	sed -i "s/@PASSPHRASE@/$(shell cat secrets/passphrase.ign)/g" $@
 	sed -i "s/@EMAIL@/$(shell cat secrets/email.ign)/g" $@

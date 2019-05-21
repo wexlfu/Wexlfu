@@ -41,9 +41,14 @@
 # 552 YW
 * Nella, realizing her natural life is at an end (though prolonged by her arts), becomes a lich.
 * Morlan takes over many operations in the Estmarks.
+* Adebelus, inspired by Nella undergoes the lich transformation. Freak accident occurs. Adebelus splits into 100 Adebeluses, all wanting to kill the rest and free themselves from mental pain.
+ * 38 of the liches are killed by Thar-Nella.
+ * 2 of the liches remain with Thar-Nella, able to bear the pain through stronger bodies.
 
 # 562 YW
 * Dwarvish Miners under Lord Dokabaril discover a remnant of Bel-Korad: the Bright Glass Heart.
+* Thar-Nella takes posession of the Heart.
+* Adebelus 11 slain.
 
 # 563 YW
 * After suffering severe setbacks in the Heart Mountains, Thar-Nella begins applying their research in general animation. They produce a number of golems, but need earth energy for mass production.
@@ -70,6 +75,9 @@
 
 # 625 YW
 * Ravanal's undead rise.
+
+# 626 YW
+* In eastern deserts, Adebelus 19 rises.
 
 # 627 YW
 * Ravanal is thwarted.

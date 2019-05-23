@@ -11,7 +11,7 @@
 * Wesnothian control of the Estmarks is lost.
 
 # 471 YW
-* In an small valley village (Loratik) of the Estmarks, a young mage named Nella grows into her power. She is isolated from outside influence and learns only from books.
+* In an small valley village (Loratin) of the Estmarks, a young mage named Nella grows into her power. She is isolated from outside influence and learns only from books.
 * Nella begins teaching the youth of her village magic, in order to defend themselves from orc attacks and wild ogres.
 
 # 472 YW
@@ -23,11 +23,11 @@
 
 # 501 YW
 * Rise of Asheviere.
-* An experiment in Loratik channeling lava results in a massive explosion. Wesnothian rangers are dispatched to the scene. The necromancers kill them all.
+* An experiment in Loratin channeling lava results in a massive explosion. Wesnothian rangers are dispatched to the scene. The necromancers kill them all.
 * Nella realizes she must hide her school. She moves into the caves and begins operating in a more spread out manner. Some necromancers travel longer distances away, establishing their own sub-schools for the pursuit of knowledge.
 
 # 509 YW
-* Morlan, grandson of Nella, is born to Lorala in Loratik.
+* Morlan, grandson of Nella, is born to Lorala in Loratin.
 
 # 517 YW
 * HttT begins.

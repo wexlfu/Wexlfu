@@ -25,6 +25,7 @@
 [/editor_group]
 #else
 {./macros}
+{./macros2}
 
 [units]
     {./units}

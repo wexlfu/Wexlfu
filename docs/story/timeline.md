@@ -21,6 +21,10 @@
 # 486 YW
 * Lorala, daughter of Nella, is born in Loratin.
 
+# 498 YW
+* Cain is born.
+* Abel is born.
+
 # 501 YW
 * Rise of Asheviere.
 * An experiment in Loratin channeling lava results in a massive explosion. Wesnothian rangers are dispatched to the scene. The necromancers kill them all.
@@ -31,9 +35,15 @@
 
 # 517 YW
 * HttT begins.
+* Abel leaves Thar-Nella and practices healing magic in a city.
 
 # 518 YW
 * HttT ends.
+
+# 529 YW
+* Sha Javia is born.
+* Abel's dark magic becomes too strong and he begins corrupting the area.
+ * Cain kills him and buries him under the city.
 
 # 530 YW
 * Wesnoth begins colonizing the Estmarks.
@@ -54,6 +64,7 @@
 * After suffering severe setbacks in the Heart Mountains, Thar-Nella begins applying their research in general animation. They produce a number of golems, but need earth energy for mass production.
 
 # 566 YW
+## Campaign: Cold Blood
 * Saurians and trolls on the northern border of the Bitter Swamp make an alliance against Thar-Nella.
 * Thar-Nella is repulsed from their energy-harvesting in the far-eastern hills by the Bitter Alliance.
 * Morlan is slain by saurian assassins.
@@ -69,6 +80,9 @@
 
 # 582 YW
 * Thar-Nella increase their efforts spreading magical knowledge in small villages, particularly with animation magic.
+
+# 588 YW
+* Cain sends a band of magi to retrieve the body of Abel, whose spirit still lingers.
 
 # 593 YW
 * Ravanal turns to evil.

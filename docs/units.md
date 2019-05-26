@@ -1,13 +1,16 @@
 Rationale for adding units, along with source location.
 
-# Golems - Era of More Units
-Alternative route for necromantic/animation magic.
+# Animated Lich
+Level 4 lich without the "ancient" requirement.
+
+# Dwarvish Scribe - Core
+Level 1 for runemaster line.
 
 # Eyestalk - Return from the Abyss
 Traditional underground monster, present in many places already.
 
+# Golems - Era of More Units
+Alternative route for necromantic/animation magic.
+
 # Rogue Mage Line - Liberty
 Magi of Thar-Nella who have not wholly thrown themselves into the dark arts (and thus are not aspiring for lichdom).
-
-# Dwarvish Scribe - Core
-Level 1 for runemaster line.

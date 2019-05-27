@@ -10,24 +10,24 @@
 # WXFU_CONFIG_BINARY_PATH, WXFU_CONFIG_PREFIX
 
 #define WXFU_LOAD path
-    {{WXFU_CONFIG_PREFIX}/{path}}
+	{{WXFU_CONFIG_PREFIX}/{path}}
 #enddef
 
 [binary_path]
-    path={WXFU_CONFIG_BINARY_PATH}
+	path={WXFU_CONFIG_BINARY_PATH}
 [/binary_path]
 
 #ifdef EDITOR
 [editor_group]
-    id = "wesnoth-Wexlfu"
-    name = _ "Wexlfu"
-    icon = "group_custom"
+	id = "wesnoth-Wexlfu"
+	name = _ "Wexlfu"
+	icon = "group_custom"
 [/editor_group]
 #else
 {./macros}
 {./macros2}
 
 [units]
-    {./units}
+	{./units}
 [/units]
 #endif

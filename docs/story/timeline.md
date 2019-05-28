@@ -56,6 +56,7 @@
  * 2 of the liches remain with Thar-Nella, able to bear the pain through stronger bodies.
 
 # 562 YW
+## Campaign: The Bright Glass Heart
 * Dwarvish Miners under Lord Dokabaril discover a remnant of Bel-Korad: the Bright Glass Heart.
 * Thar-Nella takes posession of the Heart.
 * Adebelus 11 slain.
@@ -82,7 +83,11 @@
 * Thar-Nella increase their efforts spreading magical knowledge in small villages, particularly with animation magic.
 
 # 588 YW
+## Campaign: Zeth in the Underland
 * Cain sends a band of magi to retrieve the body of Abel, whose spirit still lingers.
+
+# 590 YW
+* Cain becomes a lich.
 
 # 593 YW
 * Ravanal turns to evil.

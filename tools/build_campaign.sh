@@ -11,5 +11,8 @@ if [ -e description.txt ]; then
 fi
 
 if [ -e icon.png ]; then
+	set +x
+	echo "Inserting @ICON@"
 	sed -i "s#@ICON@#data:image/png;base64,$(base64 -w 0 icon.png)#g" _server.pbl
+	set -x
 fi

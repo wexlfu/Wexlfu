@@ -23,7 +23,7 @@
 
 # 498 YW
 * Cain is born.
-* Abel is born.
+* Abari is born.
 
 # 501 YW
 * Rise of Asheviere.
@@ -35,14 +35,14 @@
 
 # 517 YW
 * HttT begins.
-* Abel leaves Thar-Nella and practices healing magic in a city.
+* Abari leaves Thar-Nella and practices healing magic in a city.
 
 # 518 YW
 * HttT ends.
 
 # 529 YW
 * Sha Javia is born.
-* Abel's dark magic becomes too strong and he begins corrupting the area.
+* Abari's dark magic becomes too strong and he begins corrupting the area.
  * Cain kills him and buries him under the city.
 
 # 530 YW
@@ -84,7 +84,7 @@
 
 # 588 YW
 ## Campaign: Zeth in the Underland
-* Cain sends a band of magi to retrieve the body of Abel, whose spirit still lingers.
+* Cain sends a band of magi to retrieve the body of Abari, whose spirit still lingers.
 
 # 590 YW
 * Cain becomes a lich.

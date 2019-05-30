@@ -2,7 +2,7 @@
 Wexlfu (Wesnoth EXtension Library For Utility) is essentially a library of code and data to be shared among campaigns.
 
 # Release Scheme
-* Git tags: <major>.<minor>.<sub>
+* Git tags: v<major>.<minor>.<sub>
  * Major versions indicate major breaking changes.
  * Minor versions indicate major backward-compatible changes.
  * Sub versions indicate minor changes.

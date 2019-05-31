@@ -51,13 +51,17 @@ And wexlfu.cfg is:
 # Wexlfu available separately.
 #ifhave ~add-ons/Wexlfu/loader.cfg
 #define WXFU_CONFIG_BINARY_PATH
-data/add-ons/Wexlfu/#enddef
+data/add-ons/Wexlfu#enddef
+#define WXFU_CONFIG_PREFIX
+~add-ons/Wexlfu#enddef
 {~add-ons/Wexlfu/loader.cfg}
 #else
 # Built in Wexlfu.
 #ifhave ./Wexlfu/loader.cfg
 #define WXFU_CONFIG_BINARY_PATH
 data/add-ons/My_Campaign/Wexlfu/#enddef
+#define WXFU_CONFIG_PREFIX
+~add-ons/My_Campaign/Wexlfu#enddef
 {./Wexlfu/loader.cfg}
 #endif
 #endif

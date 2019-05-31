@@ -14,7 +14,7 @@
 #enddef
 
 [binary_path]
-	path={WXFU_CONFIG_BINARY_PATH}
+	path={WXFU_CONFIG_BINARY_PATH}/
 [/binary_path]
 
 # Create wexlfu table.

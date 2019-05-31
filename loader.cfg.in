@@ -23,7 +23,7 @@
 		wexlfu = {
 			config = {},
 		}
->>
+	>>
 [/lua]
 
 # Set path variables, expanded from WML macros.
@@ -34,12 +34,10 @@
 "
 [/lua]
 
-# Lua inclusions
 [lua]
 	code = <<
-		wexlfu.math = wesnoth.require(wexlfu.config.prefix .. "/lua/math.lua")
-		wexlfu.map = wesnoth.require(wexlfu.config.prefix .. "/lua/map.lua")
->>
+		wesnoth.require(wexlfu.config.prefix .. "/lua.lua")
+	>>
 [/lua]
 
 #ifdef EDITOR

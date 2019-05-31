@@ -17,6 +17,21 @@
 	path={WXFU_CONFIG_BINARY_PATH}
 [/binary_path]
 
+# Create wexlfu table.
+[lua]
+	code = <<
+		wexlfu = {}
+>>
+[/lua]
+
+# Set path variables, expanded from WML macros.
+[lua]
+	code = "
+		wexlfu.config.prefix = '{WXFU_CONFIG_PREFIX}'
+		wexlfu.config.binary_path = '{WXFU_CONFIG_BINARY_PATH}'
+"
+[/lua]
+
 #ifdef EDITOR
 [editor_group]
 	id = "wesnoth-Wexlfu"

@@ -8,7 +8,7 @@ end
 -- Weighted random choice.
 -- Pass table with items as {<item>, <weight>}.
 function M.choice_w(t)
-	local total
+	local total = 0
 	for _,v in ipairs(t) do
 		total = total + v[2]
 	end
@@ -18,7 +18,7 @@ function M.choice_w(t)
 	for _,v in ipairs(t) do
 		index = index - v[2]
 		if index <= 0 then
-			return k[1]
+			return v[1]
 		end
 	end
 end

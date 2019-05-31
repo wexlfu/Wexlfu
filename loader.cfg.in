@@ -20,7 +20,9 @@
 # Create wexlfu table.
 [lua]
 	code = <<
-		wexlfu = {}
+		wexlfu = {
+			config = {},
+		}
 >>
 [/lua]
 
@@ -30,6 +32,13 @@
 		wexlfu.config.prefix = '{WXFU_CONFIG_PREFIX}'
 		wexlfu.config.binary_path = '{WXFU_CONFIG_BINARY_PATH}'
 "
+[/lua]
+
+# Lua inclusions
+[lua]
+	code = <<
+		wexlfu.math = wesnoth.require(wexlfu.config.prefix .. "/lua/math.lua")
+>>
 [/lua]
 
 #ifdef EDITOR

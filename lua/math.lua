@@ -6,19 +6,19 @@ function M.choice(t)
 end
 
 -- Weighted random choice.
--- Pass table with items as keys and weights as values.
+-- Pass table with items as {<item>, <weight>}.
 function M.choice_w(t)
 	local total
-	for k,v in pairs(t) do
-		total = total + v
+	for _,v in ipairs(t) do
+		total = total + v[2]
 	end
 
 	local index = wesnoth.random() * total
 
-	for k,v in pairs(t) do
-		index = index - v
+	for _,v in ipairs(t) do
+		index = index - v[2]
 		if index <= 0 then
-			return k
+			return k[1]
 		end
 	end
 end

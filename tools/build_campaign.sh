@@ -22,11 +22,27 @@ fi
 cp "$wx"/templates/load.cfg wexlfu_load.cfg
 cp "$wx"/templates/preload.cfg wexlfu_preload.cfg
 
+mcvar() {
+	if grep "^#$1:" _main.cfg > /dev/null; then
+		grep "^#$1:" _main.cfg | head -n1 | cut -d' ' -f2-
+	else
+		echo "$2"
+	fi
+}
+
 for f in wexlfu_load.cfg wexlfu_preload.cfg; do
 	set +x
+	svar() {
+		sed -i "s#@$1@#$(mcvar $1 $2)#g" $f
+	}
 	echo "Inserting templates: $f"
-	sed -i "s/@NAME@/$(grep "#NAME:" _main.cfg | head -n1 | cut -d' ' -f2-)/g" $f
-	sed -i "s/@MACRO@/$(grep "#MACRO:" _main.cfg | head -n1 | cut -d' ' -f2-)/g" $f
-	sed -i "s/@WEXLFU@/$(grep "#WEXLFU:" _main.cfg | head -n1 | cut -d' ' -f2-)/g" $f
+	svar NAME No_Name
+	svar MACRO NN
+	svar WEXLFU "$(cat "$wx"/VERSION | cut -d. -f1)"
+	svar GLOBAL_WEXLFU_BINARY_PATH "data/add-ons/Wexlfu"
+	svar GLOBAL_WEXLFU_PREFIX "~add-ons/Wexlfu"
+	svar LOCAL_WEXLFU "Wexlfu"
+	svar PARENT_DATA "data/add-ons"
+	svar PARENT_LOAD "~add-ons"
 	set -x
 done

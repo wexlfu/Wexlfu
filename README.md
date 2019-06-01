@@ -34,6 +34,9 @@ You can then use code similiar to this in _main.cfg (note that this will use a W
 # Required wexlfu major version (will default to version that runs build_campaign.sh).
 #WEXLFU 4
 
+# Require minor and sub version or greater (examples would match anything from 4.0.0 up to but excluding 5.0.0).
+#WEXLFU_SUB 0.0
+
 # Place where the global Wexlfu may be installed.
 #GLOBAL_WEXLFU_BINARY_PATH data/add-ons/Wexlfu
 #GLOBAL_WEXLFU_PREFIX ~add-ons/Wexlfu

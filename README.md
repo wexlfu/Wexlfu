@@ -55,11 +55,6 @@ You can then use code similiar to this in _main.cfg (note that this will use a W
 #ifdef CAMPAIGN_NO_NAME
 {./wexlfu_load.cfg}
 #endif
-
-#ifdef EDITOR
-{./wexlfu_load.cfg}
-#endif
-
 ```
 
 You must then run tools/build_campaign.sh in your campaign's directory to create the files.

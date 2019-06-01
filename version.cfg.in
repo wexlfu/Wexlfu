@@ -1,2 +1,5 @@
 #define WXFU
 @VERSION@#enddef
+#define WXFU_@MAJOR@
+{WXFU}
+#enddef

@@ -39,7 +39,7 @@ for f in wexlfu_load.cfg wexlfu_preload.cfg; do
 	svar NAME No_Name
 	svar MACRO NN
 	svar WEXLFU "$(cat "$wx"/VERSION | cut -d. -f1)"
-	svar WEXLFU_SUB 0.0
+	svar WEXLFU_SUB "$(cat "$wx"/VERSION | cut -d. -f2-)"
 	svar GLOBAL_WEXLFU_BINARY_PATH "data/add-ons/Wexlfu"
 	svar GLOBAL_WEXLFU_PREFIX "~add-ons/Wexlfu"
 	svar LOCAL_WEXLFU "Wexlfu"

@@ -3,6 +3,9 @@ Rationale for adding units, along with source location.
 # Animated Lich
 Level 4 lich without the "ancient" requirement.
 
+# Doom Bat - Reign of the Lords, The Golden Age
+High-level bat familiar.
+
 # Dwarvish Scribe - Core
 Level 1 for runemaster line.
 

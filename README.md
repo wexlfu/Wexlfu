@@ -23,50 +23,25 @@ To install Wexlfu with your add-on, just add it as a git submodule (or similiarl
 You can then use code similiar to this in _main.cfg (note that this will use a Wexlfu installed in the top-level add-ons directory first, if it is available):
 
 ```
-[textdomain]
-    name="wesnoth-Wexlfu"
-#ifhave ./Wexlfu/loader.cfg
-    path=data/add-ons/My_Campaign/Wexlfu/translations
-#endif
-#ifhave ~add-ons/Wexlfu
-    path="data/add-ons/Wexlfu/translations"
-#endif
-[/textdomain]
+# Your campaign's directory.
+#NAME: My_Campaign
+# Your campaign's macro prefix (e.g. MC_DATAPATH).
+#MACRO: MC
+# Your required Wexlfu major version.
+#WEXLFU: 2
+
+{./wexlfu_preload.cfg}
 
 # Campaign definition here....
 
 #ifdef CAMPAIGN_MY_CAMPAIGN
-{./wexlfu.cfg}
+{./wexlfu_load.cfg}
 #endif
 
 #ifdef EDITOR
-{./wexlfu.cfg}
+{./wexlfu_load.cfg}
 #endif
 
 ```
 
-And wexlfu.cfg is:
-
-```
-# Wexlfu available separately.
-#ifhave ~add-ons/Wexlfu/loader.cfg
-#define WXFU_CONFIG_BINARY_PATH
-data/add-ons/Wexlfu#enddef
-#define WXFU_CONFIG_PREFIX
-~add-ons/Wexlfu#enddef
-{~add-ons/Wexlfu/loader.cfg}
-#else
-# Built in Wexlfu.
-#ifhave ./Wexlfu/loader.cfg
-#define WXFU_CONFIG_BINARY_PATH
-data/add-ons/My_Campaign/Wexlfu/#enddef
-#define WXFU_CONFIG_PREFIX
-~add-ons/My_Campaign/Wexlfu#enddef
-{./Wexlfu/loader.cfg}
-#endif
-#endif
-
-#ifndef WXFU
-#error Unable to locate Wexlfu.
-#endif
-```
+You must then run tools/build_campaign.sh in your campaign's directory to create the files.

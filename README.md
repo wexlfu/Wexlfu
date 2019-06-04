@@ -2,11 +2,11 @@
 Wexlfu (Wesnoth EXtension Library For Utility) is essentially a library of code and data to be shared among campaigns.
 
 # Release Scheme
-* Git tags: v<major>.<minor>.<sub>
+* Git tags: `v<major>.<minor>.<sub>`
  * Major versions indicate major breaking changes.
  * Minor versions indicate major backward-compatible changes.
  * Sub versions indicate minor changes.
-* Git branches: release-<major>
+* Git branches: `release-<major>`
  * Release branches update with the latest backward-compatible changes.
  * The master branch may break backward-compatability.
 
@@ -57,4 +57,4 @@ You can then use code similiar to this in _main.cfg (note that this will use a W
 #endif
 ```
 
-You must then run tools/build_campaign.sh in your campaign's directory to create the files.
+You must then run `tools/build_campaign.sh` in your campaign's directory to create the files.

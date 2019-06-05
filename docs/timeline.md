@@ -43,7 +43,7 @@
 # 529 YW
 * Sha Javia is born.
 * Abari's dark magic becomes too strong and he begins corrupting the area.
- * Cain kills him and buries him under the city.
+  * Cain kills him and buries him under the city.
 
 # 530 YW
 * Wesnoth begins colonizing the Estmarks.
@@ -52,8 +52,8 @@
 * Nella, realizing her natural life is at an end (though prolonged by her arts), becomes a lich.
 * Morlan takes over many operations in the Estmarks.
 * Adebelus, inspired by Nella undergoes the lich transformation. Freak accident occurs. Adebelus splits into 100 Adebeluses, all wanting to kill the rest and free themselves from mental pain.
- * 38 of the liches are killed by Thar-Nella.
- * 2 of the liches remain with Thar-Nella, able to bear the pain through stronger bodies.
+  * 38 of the liches are killed by Thar-Nella.
+  * 2 of the liches remain with Thar-Nella, able to bear the pain through stronger bodies.
 
 # 562 YW
 ## Campaign: The Bright Glass Heart
@@ -85,12 +85,20 @@
 # 588 YW
 ## Campaign: Zeth in the Underland
 * Cain sends a band of magi to retrieve the body of Abari, whose spirit still lingers.
+* A valley to the south of Lintanir Forest is made desolate by the departure of Abari.
+  * The Valley of Life; Abari Valley
+
+# 589 YW
+* The Empathists are founded, a group of Lintanir elves, human magi, and merfolk who desire the restoration of the Abari Valley.
 
 # 590 YW
 * Cain becomes a lich.
 
 # 593 YW
 * Ravanal turns to evil.
+
+# 597 YW
+* The Empathists expand to general upkeep of the world, maintaining peace, etc.
 
 # 625 YW
 * Ravanal's undead rise.

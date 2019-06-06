@@ -97,14 +97,19 @@
 # 593 YW
 * Ravanal turns to evil.
 
+# 595 YW
+* Ignacia founds the Flaming Convent.
+
 # 597 YW
 * The Empathists expand to general upkeep of the world, maintaining peace, etc.
+  * Although Thar-Nella does not hinder and sometimes helps them, they consider Thar-Nella to be questionable.
+  * They are pro-elf, pro-merfolk, anti-orc, anti-undead, and sometimes anti-human.
 
 # 625 YW
 * Ravanal's undead rise.
 
 # 626 YW
-* In eastern deserts, Adebelus 19 rises.
+## Campaign: The Inferno League
 
 # 627 YW
 * Ravanal is thwarted.

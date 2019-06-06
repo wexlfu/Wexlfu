@@ -10,6 +10,8 @@ sed -i "s/@VERSION@/$(cat VERSION)/g" _server.pbl
 
 if [ -e description.txt ]; then
 	sed -i "s#@DESCRIPTION@#$(cat description.txt)#g" _server.pbl
+elif which wesnoth > /dev/null; then
+	sed -i "s#@DESCRIPTION@#$($(wesnoth --data-path 2>/dev/null)/data/tools/wesnoth/wmlparser3.py -j -i _main.cfg 2>/dev/null | jq .campaign\[0\].description -r)#g" _server.pbl
 fi
 
 if [ -e icon.png ]; then

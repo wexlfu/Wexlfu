@@ -19,6 +19,8 @@ if [ -e icon.png ]; then
 	echo "Inserting @ICON@"
 	sed -i "s#@ICON@#data:image/png;base64,$(base64 -w 0 icon.png)#g" _server.pbl
 	set -x
+elif which wesnoth > /dev/null; then
+	sed -i "s#@ICON@#$($(wesnoth --data-path 2>/dev/null)/data/tools/wesnoth/wmlparser3.py -j -i _main.cfg 2>/dev/null | jq .campaign\[0\].icon -r)#g" _server.pbl
 fi
 
 cp "$wx"/templates/load.cfg wexlfu_load.cfg

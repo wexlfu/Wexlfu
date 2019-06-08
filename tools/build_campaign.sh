@@ -59,5 +59,4 @@ if [ -e README.md.in ]; then
 
 	sed -i "s#@VERSION@#$(cat VERSION)#g" README.md
 	sed -i "s#@DESCRIPTION@#$DESCRIPTION#g" README.md
-	sed -i "s#@WEXLFU@#$#g" README.md
 fi

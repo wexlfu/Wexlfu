@@ -8,11 +8,13 @@ sed -i "s/@PASSPHRASE@/$(cat secrets/passphrase.ign)/g" _server.pbl
 sed -i "s/@EMAIL@/$(cat secrets/email.ign)/g" _server.pbl
 sed -i "s/@VERSION@/$(cat VERSION)/g" _server.pbl
 
+DESCRIPTION=""
 if [ -e description.txt ]; then
-	sed -i "s#@DESCRIPTION@#$(cat description.txt)#g" _server.pbl
+	DESCRIPTION="$(cat description.txt)"
 elif which wesnoth > /dev/null; then
-	sed -i "s#@DESCRIPTION@#$($(wesnoth --data-path 2>/dev/null)/data/tools/wesnoth/wmlparser3.py -j -i _main.cfg 2>/dev/null | jq .campaign\[0\].description -r)#g" _server.pbl
+	DESCRIPTION="$($(wesnoth --data-path 2>/dev/null)/data/tools/wesnoth/wmlparser3.py -j -i _main.cfg 2>/dev/null | jq .campaign\[0\].description -r)"
 fi
+sed -i "s#@DESCRIPTION@#$DESCRIPTION#g" _server.pbl
 
 if [ -e icon.png ]; then
 	set +x
@@ -51,3 +53,11 @@ for f in wexlfu_load.cfg wexlfu_preload.cfg; do
 	svar PARENT_LOAD "~add-ons"
 	set -x
 done
+
+if [ -e README.md.in ]; then
+	cp README.md.in README.md
+
+	sed -i "s#@VERSION@#$(cat VERSION)#g" README.md
+	sed -i "s#@DESCRIPTION@#$DESCRIPTION#g" README.md
+	sed -i "s#@WEXLFU@#$#g" README.md
+fi

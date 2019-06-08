@@ -1,62 +1,118 @@
 #!/bin/sh
-set -ex
+set -e
 
 wx="$(realpath "$(dirname $0)/..")"
+wmlparser() {
+	$(wesnoth --data-path 2>/dev/null)/data/tools/wesnoth/wmlparser3.py "$@"
+	return $?
+}
 
-cp _server.pbl.in _server.pbl
-sed -i "s/@PASSPHRASE@/$(cat secrets/passphrase.ign)/g" _server.pbl
-sed -i "s/@EMAIL@/$(cat secrets/email.ign)/g" _server.pbl
-sed -i "s/@VERSION@/$(cat VERSION)/g" _server.pbl
+td="$(mktemp -d)"
 
-DESCRIPTION=""
-if [ -e description.txt ]; then
-	DESCRIPTION="$(cat description.txt)"
-elif which wesnoth > /dev/null; then
-	DESCRIPTION="$($(wesnoth --data-path 2>/dev/null)/data/tools/wesnoth/wmlparser3.py -j -i _main.cfg 2>/dev/null | jq .campaign\[0\].description -r)"
-fi
-sed -i "s#@DESCRIPTION@#$DESCRIPTION#g" _server.pbl
+trap "echo Removing temporary directory: "$td"; rm -r "$td"" INT QUIT TERM EXIT
 
-if [ -e icon.png ]; then
-	set +x
-	echo "Inserting @ICON@"
-	sed -i "s#@ICON@#data:image/png;base64,$(base64 -w 0 icon.png)#g" _server.pbl
-	set -x
-elif which wesnoth > /dev/null; then
-	sed -i "s#@ICON@#$($(wesnoth --data-path 2>/dev/null)/data/tools/wesnoth/wmlparser3.py -j -i _main.cfg 2>/dev/null | jq .campaign\[0\].icon -r)#g" _server.pbl
-fi
+# Write variable.
+wvar() {
+	echo "$2" > "$td/$1".var
+}
 
-cp "$wx"/templates/load.cfg wexlfu_load.cfg
-cp "$wx"/templates/preload.cfg wexlfu_preload.cfg
-
-mcvar() {
-	if grep "^#$1:" _main.cfg > /dev/null; then
-		grep "^#$1:" _main.cfg | head -n1 | cut -d' ' -f2-
+# Read variable.
+rvar() {
+	if [ -e "$td/$1".var ]; then
+		cat "$td/$1".var
 	else
-		echo "$2"
+		cat "$td/$1".var.default
 	fi
 }
 
-for f in wexlfu_load.cfg wexlfu_preload.cfg; do
-	set +x
-	svar() {
-		sed -i "s#@$1@#$(mcvar $1 $2)#g" $f
-	}
-	echo "Inserting templates: $f"
-	svar NAME No_Name
-	svar MACRO NN
-	svar WEXLFU "$(cat "$wx"/VERSION | cut -d. -f1)"
-	svar WEXLFU_SUB "$(cat "$wx"/VERSION | cut -d. -f2-)"
-	svar GLOBAL_WEXLFU_BINARY_PATH "data/add-ons/Wexlfu"
-	svar GLOBAL_WEXLFU_PREFIX "~add-ons/Wexlfu"
-	svar LOCAL_WEXLFU "Wexlfu"
-	svar PARENT_DATA "data/add-ons"
-	svar PARENT_LOAD "~add-ons"
-	set -x
-done
+# Default variable.
+dvar() {
+	echo "$2" > "$td/$1".var.default
+}
 
-if [ -e README.md.in ]; then
-	cp README.md.in README.md
+# Variable from file.
+fvar() {
+	wvar "$1" "$(cat "$2")"
+}
 
-	sed -i "s#@VERSION@#$(cat VERSION)#g" README.md
-	sed -i "s#@DESCRIPTION@#$DESCRIPTION#g" README.md
+# Variable from campaign WML.
+wmlvar() {
+	wvar "$1" "$(wmlparser -j -i _main.cfg 2>/dev/null | jq .campaign\[0\]."$2" -r)"
+}
+
+# Variable from _main.cfg tags.
+mcvar() {
+	if grep "^#$1:" _main.cfg > /dev/null; then
+		wvar "$1" "$(grep "^#$1:" _main.cfg | head -n1 | cut -d' ' -f2-)"
+	fi
+}
+
+# Apply variables to file.
+apply() {
+	find "$td" -type f -name '*.var.default' | xargs basename -a -- | cut -d. -f1 | while read n; do
+		sed -i "s#@$n@#$(rvar "$n")#g" $1
+	done
+}
+
+# Create and apply file from template.
+template() {
+	if [ -e "$1" ]; then
+		cp "$1" "$2"
+		apply "$2"
+	fi
+}
+
+if [ ! -e _main.cfg ]; then
+	echo "No _main.cfg found!"
+	exit 1
 fi
+
+mkdir -p dist
+
+dvar DESCRIPTION ""
+dvar EMAIL ""
+dvar GLOBAL_WEXLFU_BINARY_PATH "data/add-ons/Wexlfu"
+dvar GLOBAL_WEXLFU_PREFIX "~add-ons/Wexlfu"
+dvar ICON ""
+dvar LOCAL_WEXLFU "Wexlfu"
+dvar MACRO NN
+dvar NAME No_Name
+dvar PARENT_DATA "data/add-ons"
+dvar PARENT_LOAD "~add-ons"
+dvar PASSPHRASE ""
+dvar WEXLFU "$(cat "$wx"/VERSION | cut -d. -f1)"
+dvar WEXLFU_SUB "$(cat "$wx"/VERSION | cut -d. -f2-)"
+dvar VERSION "0.0.0"
+
+fvar PASSPHRASE secrets/passphrase.ign
+fvar EMAIL secrets/email.ign
+fvar VERSION VERSION
+
+wmlvar DESCRIPTION description
+
+if [ -e icon.png ]; then
+	wvar ICON "data:image/png;base64,$(base64 -w 0 icon.png)"
+else
+	wmlvar ICON icon
+fi
+
+mcvar NAME
+mcvar MACRO
+mcvar WEXLFU
+mcvar WEXLFU_SUB
+mcvar GLOBAL_WEXLFU_BINARY_PATH
+mcvar GLOBAL_WEXLFU_PREFIX
+mcvar LOCAL_WEXLFU
+mcvar PARENT_DATA
+mcvar PARENT_LOAD
+
+echo "---"
+find "$td" -type f -name '*.var.default' | xargs basename -a -- | cut -d. -f1 | sort | while read n; do
+	echo "$n: $(rvar "$n")"
+done
+echo "---"
+
+template "$wx"/templates/load.cfg dist/wexlfu_load.cfg
+template "$wx"/templates/preload.cfg dist/wexlfu_preload.cfg
+template _server.pbl.in _server.pbl
+template README.md.in README.md

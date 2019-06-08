@@ -48,12 +48,12 @@ You can then use code similiar to this in _main.cfg (note that this will use a W
 #PARENT_DATA data/add-ons
 #PARENT_LOAD ~add-ons
 
-{./wexlfu_preload.cfg}
+{./dist/wexlfu_preload.cfg}
 
 # Campaign definition here....
 
 #ifdef CAMPAIGN_NO_NAME
-{./wexlfu_load.cfg}
+{./dist/wexlfu_load.cfg}
 #endif
 ```
 

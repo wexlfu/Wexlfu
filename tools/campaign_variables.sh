@@ -1,5 +1,9 @@
 # If not otherwise specified, variables are read from _main.cfg as (example): `#NAME: No_Name`
 
+# Markdown list of campaign information.
+# Constructed automatically.
+dvar CAMPAIGN_STATS ""
+
 # The campaign description.
 # Read from [campaign].description
 dvar DESCRIPTION ""

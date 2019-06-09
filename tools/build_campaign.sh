@@ -1,10 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 wx="$(realpath "$(dirname $0)/..")"
 wmlparser() {
 	$(wesnoth --data-path 2>/dev/null)/data/tools/wesnoth/wmlparser3.py "$@"
 	return $?
+}
+
+sedquote() {
+	IFS= read -d '' -r < <(sed -e ':a' -e '$!{N;ba' -e '}' -e 's/[&/\]/\\&/g; s/\n/\\&/g' <<<"$1")
+	printf %s "${REPLY%$'\n'}"
 }
 
 td="$(mktemp -d)"
@@ -50,7 +55,7 @@ mcvar() {
 # Apply variables to file.
 apply() {
 	find "$td" -type f -name '*.var.default' | xargs basename -a -- | cut -d. -f1 | while read n; do
-		sed -i "s#@$n@#$(rvar "$n")#g" $1
+		sed -i "s/@$n@/$(sedquote "$(rvar "$n")")/g" $1
 	done
 }
 
@@ -101,6 +106,10 @@ find "$td" -type f -name '*.var.default' | xargs basename -a -- | cut -d. -f1 | 
 	echo "$n: $(rvar "$n")"
 done
 echo "---"
+
+template "$wx"/templates/campaign_stats.md "$td"/campaign_stats.md
+
+fvar CAMPAIGN_STATS "$td"/campaign_stats.md
 
 template "$wx"/templates/load.cfg dist/wexlfu_load.cfg
 template "$wx"/templates/preload.cfg dist/wexlfu_preload.cfg

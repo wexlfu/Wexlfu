@@ -69,20 +69,7 @@ fi
 
 mkdir -p dist
 
-dvar DESCRIPTION ""
-dvar EMAIL ""
-dvar GLOBAL_WEXLFU_BINARY_PATH "data/add-ons/Wexlfu"
-dvar GLOBAL_WEXLFU_PREFIX "~add-ons/Wexlfu"
-dvar ICON ""
-dvar LOCAL_WEXLFU "Wexlfu"
-dvar MACRO NN
-dvar NAME No_Name
-dvar PARENT_DATA "data/add-ons"
-dvar PARENT_LOAD "~add-ons"
-dvar PASSPHRASE ""
-dvar WEXLFU "$(cat "$wx"/VERSION | cut -d. -f1)"
-dvar WEXLFU_SUB "$(cat "$wx"/VERSION | cut -d. -f2-)"
-dvar VERSION "0.0.0"
+. "$wx"/tools/campaign_variables.sh
 
 fvar PASSPHRASE secrets/passphrase.ign
 fvar EMAIL secrets/email.ign
@@ -96,15 +83,17 @@ else
 	wmlvar ICON icon
 fi
 
-mcvar NAME
-mcvar MACRO
-mcvar WEXLFU
-mcvar WEXLFU_SUB
 mcvar GLOBAL_WEXLFU_BINARY_PATH
 mcvar GLOBAL_WEXLFU_PREFIX
 mcvar LOCAL_WEXLFU
+mcvar MACRO
+mcvar META_SCENARIOS
+mcvar META_MEDALS
+mcvar NAME
 mcvar PARENT_DATA
 mcvar PARENT_LOAD
+mcvar WEXLFU
+mcvar WEXLFU_SUB
 
 echo "---"
 find "$td" -type f -name '*.var.default' | xargs basename -a -- | cut -d. -f1 | sort | while read n; do

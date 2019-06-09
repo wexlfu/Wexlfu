@@ -23,7 +23,7 @@ To install Wexlfu with your add-on, just add it as a git submodule (or similiarl
 You can then use code similiar to this in _main.cfg (note that this will use a Wexlfu installed in the top-level add-ons directory first, if it is available):
 
 ```
-# Wexlfu configuration lines with default settings.
+# Wexlfu configuration lines.
 
 # Campaign directory name.
 #NAME No_Name
@@ -31,22 +31,7 @@ You can then use code similiar to this in _main.cfg (note that this will use a W
 # Macro prefix (for things like NN_DATAPATH).
 #MACRO NN
 
-# Required wexlfu major version (will default to version that runs build_campaign.sh).
-#WEXLFU 4
-
-# Require minor and sub version or greater (examples would match anything from 4.0.0 up to but excluding 5.0.0) (will default to version that runs build_campaign.sh).
-#WEXLFU_SUB 0.3
-
-# Place where the global Wexlfu may be installed.
-#GLOBAL_WEXLFU_BINARY_PATH data/add-ons/Wexlfu
-#GLOBAL_WEXLFU_PREFIX ~add-ons/Wexlfu
-
-# Directory where the local Wexlfu may be installed.
-#LOCAL_WEXLFU Wexlfu
-
-# Parent directory of the campaign.
-#PARENT_DATA data/add-ons
-#PARENT_LOAD ~add-ons
+# For more configuration variables, see tools/campaign_variables.sh
 
 {./dist/wexlfu_preload.cfg}
 

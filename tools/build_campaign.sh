@@ -133,6 +133,9 @@ echo "#textdomain $(rvar TEXTDOMAIN)" > dist/wexlfu_macros.cfg
 varlist | while read n; do
 	echo "#define $(rvar MACRO)_WVAR_$n" >> dist/wexlfu_macros.cfg
 	echo "$(rvar "$n")#enddef" >> dist/wexlfu_macros.cfg
+done
+
+for n in CAMPAIGN_STATS_PLAIN; do
 	echo "#define $(rvar MACRO)_WVART_$n" >> dist/wexlfu_macros.cfg
 	echo "_ <<$(rvar "$n")>>#enddef" >> dist/wexlfu_macros.cfg
 done

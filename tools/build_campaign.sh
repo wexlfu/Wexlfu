@@ -152,3 +152,6 @@ template "$wx"/templates/load.cfg dist/wexlfu_load.cfg
 template "$wx"/templates/preload.cfg dist/wexlfu_preload.cfg
 
 template README.md.in README.md
+if which markdown2bbcode > /dev/null; then
+	markdown2bbcode < README.md > README.bbcode
+fi

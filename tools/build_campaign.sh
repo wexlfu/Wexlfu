@@ -122,13 +122,7 @@ echo "---"
 template "$wx"/templates/campaign_stats.md "$td"/campaign_stats.md
 template "$wx"/templates/campaign_stats.txt "$td"/campaign_stats.txt
 
-if [[ "$(rvar META_SCENARIOS_DONE)" = "1" ]]; then
-	sed -i "s/scenarios/scenario/g" -i "$td"/campaign_stats.txt "$td"/campaign_stats.md
-fi
-
-if [[ "$(rvar META_MEDALS)" = "1" ]]; then
-	sed -i "s/medals/medal/g" -i "$td"/campaign_stats.txt "$td"/campaign_stats.md
-fi
+sed -e "s/1 medals/1 medal/g" -e "s/1 Medals/1 Medal/g" -e "s/1 scenarios/1 scenario/g" -e "s/1 Scenario/1 Scenario/g" -i "$td"/campaign_stats.txt "$td"/campaign_stats.md
 
 fvar CAMPAIGN_STATS "$td"/campaign_stats.md
 fvar CAMPAIGN_STATS_PLAIN "$td"/campaign_stats.txt

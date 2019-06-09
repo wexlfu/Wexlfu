@@ -28,7 +28,7 @@ dvar LOCAL_WEXLFU "Wexlfu"
 dvar MACRO NN
 
 # Medal description.
-dvar MEDAL_DESCRIPTION "Though this campaign features only one difficulty level, there is opportunity for extra challenge in completing some alternative objectives or actions. These will award you with medals of recognition at the end of the campaign."
+dvar MEDAL_DESCRIPTION "Though this campaign features a single difficulty level, there is opportunity for extra challenge in completing some alternative objectives or actions. These will award you with medals of recognition at the end of the campaign."
 
 # Possible medals that can be earned.
 dvar META_MEDALS 0

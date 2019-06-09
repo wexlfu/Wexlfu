@@ -3,6 +3,8 @@
 # Markdown list of campaign information.
 # Constructed automatically.
 dvar CAMPAIGN_STATS ""
+# Plain text for insertion in description.
+dvar CAMPAIGN_STATS_PLAIN ""
 
 # The campaign description.
 # Read from [campaign].description
@@ -41,6 +43,9 @@ dvar PARENT_LOAD "~add-ons"
 
 # Read from secrets/passphrase.ign
 dvar PASSPHRASE ""
+
+# Read from _main.cfg automatically.
+dvar TEXTDOMAIN "wesnoth-No_Name"
 
 # Required Wexlfu major version.
 dvar WEXLFU "$(cat "$wx"/VERSION | cut -d. -f1)"

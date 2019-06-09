@@ -90,6 +90,7 @@ fvar EMAIL secrets/email.ign
 fvar VERSION VERSION
 
 wmlvar DESCRIPTION description
+wvar DESCRIPTION "$(rvar DESCRIPTION | head -n1)"
 
 if [ -e icon.png ]; then
 	wvar ICON "data:image/png;base64,$(base64 -w 0 icon.png)"
@@ -110,23 +111,30 @@ mcvar PARENT_LOAD
 mcvar WEXLFU
 mcvar WEXLFU_SUB
 
+wvar TEXTDOMAIN "$(head -n1 _main.cfg | cut -d' ' -f2)"
+
 echo "---"
 varlist | while read n; do
 	echo "$n: $(rvar "$n")"
 done
 echo "---"
 
+template "$wx"/templates/campaign_stats.md "$td"/campaign_stats.md
+fvar CAMPAIGN_STATS "$td"/campaign_stats.md
+
+template "$wx"/templates/campaign_stats.txt "$td"/campaign_stats.txt
+fvar CAMPAIGN_STATS_PLAIN "$td"/campaign_stats.txt
+
 template _server.pbl.in _server.pbl
 clearvar PASSPHRASE
 clearvar EMAIL
 
-template "$wx"/templates/campaign_stats.md "$td"/campaign_stats.md
-fvar CAMPAIGN_STATS "$td"/campaign_stats.md
-
-echo "# Wexlfu variable macros." > dist/wexlfu_macros.cfg
+echo "#textdomain $(rvar TEXTDOMAIN)" > dist/wexlfu_macros.cfg
 varlist | while read n; do
-	echo "#define $(rvar "MACRO")_WVAR_$n" >> dist/wexlfu_macros.cfg
+	echo "#define $(rvar MACRO)_WVAR_$n" >> dist/wexlfu_macros.cfg
 	echo "$(rvar "$n")#enddef" >> dist/wexlfu_macros.cfg
+	echo "#define $(rvar MACRO)_WVART_$n" >> dist/wexlfu_macros.cfg
+	echo "_ <<$(rvar "$n")>>#enddef" >> dist/wexlfu_macros.cfg
 done
 
 template "$wx"/templates/load.cfg dist/wexlfu_load.cfg

@@ -21,10 +21,12 @@ dvar LOCAL_WEXLFU "Wexlfu"
 # The campaign's macro prefix (for e.g. NN_DATAPATH).
 dvar MACRO NN
 
-# Number of active (battle) scenarios.
-dvar META_SCENARIOS 0
 # Possible medals that can be earned.
 dvar META_MEDALS 0
+# Number of planned active (battle) scenarios.
+dvar META_SCENARIOS 0
+# Number of playable scenarios.
+dvar META_SCENARIOS_DONE 0
 
 # The campaign's directory name.
 dvar NAME No_Name

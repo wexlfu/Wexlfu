@@ -35,9 +35,18 @@ dvar() {
 	echo "$2" > "$td/$1".var.default
 }
 
+# Clear variable.
+clearvar() {
+	wvar "$1" ""
+}
+
 # Variable from file.
 fvar() {
 	wvar "$1" "$(cat "$2")"
+}
+
+varlist() {
+	find "$td" -type f -name '*.var.default' | xargs basename -a -- | cut -d. -f1 | sort
 }
 
 # Variable from campaign WML.
@@ -54,7 +63,7 @@ mcvar() {
 
 # Apply variables to file.
 apply() {
-	find "$td" -type f -name '*.var.default' | xargs basename -a -- | cut -d. -f1 | while read n; do
+	varlist | while read n; do
 		sed -i "s/@$n@/$(sedquote "$(rvar "$n")")/g" $1
 	done
 }
@@ -102,16 +111,25 @@ mcvar WEXLFU
 mcvar WEXLFU_SUB
 
 echo "---"
-find "$td" -type f -name '*.var.default' | xargs basename -a -- | cut -d. -f1 | sort | while read n; do
+varlist | while read n; do
 	echo "$n: $(rvar "$n")"
 done
 echo "---"
 
-template "$wx"/templates/campaign_stats.md "$td"/campaign_stats.md
+template _server.pbl.in _server.pbl
+clearvar PASSPHRASE
+clearvar EMAIL
 
+template "$wx"/templates/campaign_stats.md "$td"/campaign_stats.md
 fvar CAMPAIGN_STATS "$td"/campaign_stats.md
+
+echo "# Wexlfu variable macros." > dist/wexlfu_macros.cfg
+varlist | while read n; do
+	echo "#define $(rvar "MACRO")_WVAR_$n" >> dist/wexlfu_macros.cfg
+	echo "$(rvar "$n")#enddef" >> dist/wexlfu_macros.cfg
+done
 
 template "$wx"/templates/load.cfg dist/wexlfu_load.cfg
 template "$wx"/templates/preload.cfg dist/wexlfu_preload.cfg
-template _server.pbl.in _server.pbl
+
 template README.md.in README.md

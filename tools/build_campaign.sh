@@ -122,7 +122,7 @@ echo "---"
 template "$wx"/templates/campaign_stats.md "$td"/campaign_stats.md
 template "$wx"/templates/campaign_stats.txt "$td"/campaign_stats.txt
 
-sed -e "s/1 medals/1 medal/g" -e "s/1 Medals/1 Medal/g" -e "s/1 scenarios/1 scenario/g" -e "s/1 Scenario/1 Scenario/g" -i "$td"/campaign_stats.txt "$td"/campaign_stats.md
+sed -e "s/\b1 medals/1 medal/g" -e "s/\b1 Medals/1 Medal/g" -e "s/\b1 scenarios/1 scenario/g" -e "s/\b1 Scenario/1 Scenario/g" -i "$td"/campaign_stats.txt "$td"/campaign_stats.md
 
 fvar CAMPAIGN_STATS "$td"/campaign_stats.md
 fvar CAMPAIGN_STATS_PLAIN "$td"/campaign_stats.txt

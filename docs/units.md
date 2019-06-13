@@ -9,6 +9,9 @@ High-level bat familiar.
 # Dwarvish Scribe - Core
 Level 1 for runemaster line.
 
+# Earth Mage Line - Core
+Dunefolk (sort of) mage line.
+
 # Eyestalk - Return from the Abyss
 Traditional underground monster, present in many places already.
 

@@ -9,7 +9,7 @@ High-level bat familiar.
 # Dwarvish Scribe - Core
 Level 1 for runemaster line.
 
-# Earth Mage Line - Core
+# Earth Mage Line - Core, Era of the Ravagers
 Dunefolk (sort of) mage line.
 
 # Eyestalk - Return from the Abyss

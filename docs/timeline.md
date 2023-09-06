@@ -124,6 +124,12 @@
 # 636 YW
 * Thar-Nella expands into the southern deserts.
 
+# 673 YW
+* Konrad II dies, and wesnoth devolves into a collection of warring city-states.
+
+# 712 YW
+* Campaign begins: The Paradise Trap
+
 # 842 YW
 * SotBE begins.
 

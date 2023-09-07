@@ -35,7 +35,10 @@ You can then use code similiar to this in _main.cfg (note that this will use a W
 
 {./dist/wexlfu_preload.cfg}
 
+[campaign]
 # Campaign definition here....
+{WEXLFU_CAMPAIGN}
+[/campaign]
 
 #ifdef CAMPAIGN_NO_NAME
 {./dist/wexlfu_load.cfg}
